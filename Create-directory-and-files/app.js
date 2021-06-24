@@ -12,9 +12,13 @@ const createDirectory=(path) => {
     }
         
 }
-createDirectory('./controllers')
-createDirectory('./routers')
-createDirectory('./views')
+const dirs  = ['controllers', 'routers', 'views']
+dirs.forEach(element => {
+    createDirectory(element)
+});
+// createDirectory('./controllers')
+// createDirectory('./routers')
+// createDirectory('./views')
 
 const createMyFile = (filename) => {
     fs.writeFile(filename, '//Learn Node FS module', function (err) {
