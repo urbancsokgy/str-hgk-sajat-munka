@@ -5,8 +5,8 @@
 const http = require('http')
 const router = require('./router/router')
 const SiteRouter = require('./router/router')
-const port = 8080
-
+const port =process.env.PORT || 8080
+console.log(process.env.PORT)
 http.createServer((req, res) =>{
   console.log(router[req.url]);
   // console.log(res);
@@ -14,6 +14,9 @@ http.createServer((req, res) =>{
   ? router[req.url](res)
   : router['/404'](res)
    
-}).listen(port)
+})
+.on('error', err=> console.log('Server error:', err.message))
+.on('listening', () => { return console.log('Listen')})
+.listen(port)
 
 console.log('Server is running at http://localhost:8080')
