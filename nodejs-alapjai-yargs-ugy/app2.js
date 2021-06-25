@@ -53,6 +53,17 @@ yargs
             await movieService.modifyMovie(args.id, args.producer, args.title) 
         }
     })
+    .command({
+        command: 'del',
+        describe: 'Delete one movie',
+        builder: { id  },
+        handler: async (args) => {
+            console.log('-----------------------------------');
+            console.log('-----------------------------------');
+            console.log('Delete movie: ', args.id)
+            await movieService.delMovie(args.id) 
+        }
+    })
     .locale('en')
     .strict()
     .help()

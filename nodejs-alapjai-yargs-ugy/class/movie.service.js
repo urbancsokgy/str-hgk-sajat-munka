@@ -59,6 +59,14 @@ module.exports = class MovieService {
         await this.api.save(this.movies);
         return this.movie;
         }
+    async delMovie(id){
+        if (!this.movies) {
+            await this.init();
+        }  
+        this.movies =await this.movies.filter(movie => movie.id !== id)
+           
+        await this.api.save(this.movies);
+        return this.movie;
+        }
      
-    
 }
