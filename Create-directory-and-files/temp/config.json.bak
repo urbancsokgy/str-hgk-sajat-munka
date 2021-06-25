@@ -1,0 +1,13 @@
+{
+    "admin": {
+        "name": "Pisti",
+        "age" : 18,
+        "address" : "Oklahoma"
+    }
+}{
+    "admin": {
+        "name": "Pisti",
+        "age" : 18,
+        "address" : "Oklahoma"
+    }
+}
