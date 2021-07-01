@@ -72,3 +72,9 @@ db.getCollection('movies').find({
       ({_id: id}, {$set: {releaseYear: randomIntFromInterval(1981,1999)}})
       })
       db.getCollection('movies').find({})
+
+      db.getCollection('movies').find({
+        $and: [
+        {releaseYear: {$gt: 1983}},
+        {releaseYear: {$lt: 1995}}
+        ]}).sort({releaseYear: 1})
