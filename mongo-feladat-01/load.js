@@ -67,15 +67,17 @@ db.movies.insertMany([{
   "director": "Clint Eastwood"
 }]);
 
-use videoStore
+//use videoStore
 db.movies.updateMany(
     {},
     {$set: {ratings: []}}
 )
 db.getCollection('movies').updateMany({category : "fantasy"}, {$set: {ratings: 3}})
 
-use videoStore
+//use videoStore
 db.movies.updateMany(
     {},
     {$set: {releaseYear: 2000}}
 )
+
+db.movies.updateMany( {}, [{$set: {title: {$toUpper: "$title"} }}] )

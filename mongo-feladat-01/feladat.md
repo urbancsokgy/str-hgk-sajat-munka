@@ -79,3 +79,5 @@ db.movies.updateMany(
     {},
     {$set: {releaseYear: 2000}}
 )
+
+db.movies.updateMany( {}, [{$set: {title: {$toUpper: "$title"} }}] )
