@@ -55,3 +55,20 @@ i++
 
 db.getCollection('movies').find({})
 db.getCollection('movies').updateMany({}, {$unset :{movies: ""}})
+
+db.getCollection('movies').find({
+    $or: 
+    [
+    {category: {$eq: "fantasy"}},
+    { category: {$eq: "action"}}
+     
+     ]})
+
+     var mov=db.getCollection('movies').find({})
+     mov.forEach(data=>{
+     var id=data._id
+     print(id)
+      db.getCollection('movies').updateMany
+      ({_id: id}, {$set: {releaseYear: randomIntFromInterval(1981,1999)}})
+      })
+      db.getCollection('movies').find({})
