@@ -3,6 +3,12 @@ const fs = require('fs')
 const path = require('path')
 const zlib =require('zlib')
 
+const readFileProm = async() => {
+  data= await fsPromises.readFile('./newfile.txt', 'utf-8')
+  console.log(data);  
+}
+readFileProm()
+
 const readFile = fs.createReadStream(
     path.join(__dirname, 'config.json')
     ,{encoding: 'utf-8'}

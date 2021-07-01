@@ -8,14 +8,11 @@ module.exports = class MovieService {
         this.movies = null;
         this.init();
     }
-    
-    async generateNewMovieId(){
-        let movies=await this.getAllMovies()
-        console.log((movies))
+
+    async generateNewMovieId() {
+        let movies = await this.getAllMovies()
         const sortedMovies = [...movies].sort((a, b) => a.id > b.id);
-         return sortedMovies[sortedMovies.length - 1].id + 1;
-        //return 10
-        
+        return sortedMovies[sortedMovies.length - 1].id + 1
     }
     async init() {
         this.movies = await this.api.get();
@@ -25,7 +22,7 @@ module.exports = class MovieService {
         if (!this.movies) {
             await this.init();
         }
-        
+
         return this.movies;
     }
 
@@ -39,34 +36,34 @@ module.exports = class MovieService {
         )[0];
     }
 
-    async saveMovie(producer, title){
-        let id= await this.generateNewMovieId()
-        const movie = { id, producer, title }      
+    async saveMovie(producer, title) {
+        let id = await this.generateNewMovieId()
+        const movie = { id, producer, title }
         this.movies = [...this.movies, movie]
-        console.log(this.movies);       
+        console.log(this.movies);
         await this.api.save(this.movies);
         return this.movie;
-        }
-    async modifyMovie(id, producer, title){
+    }
+    async modifyMovie(id, producer, title) {
         //const movie = { id, producer, title } 
         if (!this.movies) {
             await this.init();
-        }  
-        this.movies =await this.movies.map(movie => movie.id === id
-             ? { id, producer, title }
-             : movie)   
-        console.log(this.movies);       
-        await this.api.save(this.movies);
-        return this.movie;
         }
-    async delMovie(id){
+        this.movies = await this.movies.map(movie => movie.id === id
+            ? { id, producer, title }
+            : movie)
+        
+        await this.api.save(this.movies);
+        return this.movies;
+    }
+    async delMovie(id) {
         if (!this.movies) {
             await this.init();
-        }  
-        this.movies =await this.movies.filter(movie => movie.id !== id)
-           
+        }
+        this.movies = await this.movies.filter(movie => movie.id !== id)
+
         await this.api.save(this.movies);
         return this.movie;
-        }
-     
+    }
+
 }

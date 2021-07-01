@@ -61,7 +61,8 @@ yargs
             console.log('-----------------------------------');
             console.log('-----------------------------------');
             console.log('Delete movie: ', args.id)
-            await movieService.delMovie(args.id) 
+           const deleted= await movieService.delMovie(args.id) 
+           console.log("Deleted movie: ", deleted)
         }
     })
     .locale('en')
