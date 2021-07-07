@@ -8,6 +8,7 @@ const getHtmlContent =require('./router/router')
 const port = 8080
 
 const server = http.createServer(async (req, res) => {
+	//res.writeHead(200,  {"Content-Type" : "text/plain; charset=UTF-8"});
     res.writeHead(200, { 'Content-Type': 'text/html' });
     let content= "Page not found"    
     try {

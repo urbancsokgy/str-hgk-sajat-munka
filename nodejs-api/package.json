@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-api",
+  "version": "1.0.0",
+  "description": "NodeJS API tanfolyami gyakorlat",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js" 
+  },
+  "keywords": [
+    "nodeJS",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^16.0.0",
+    "express": "^4.17.1",
+    "body-parser" : "1.19.0"
+  }
+}
