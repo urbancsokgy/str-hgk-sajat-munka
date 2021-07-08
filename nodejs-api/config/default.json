@@ -1,0 +1,7 @@
+{
+    "database" :{
+        "username": "urbancsokgy",
+        "password": "DiPqHPyh6k5MEfV9",
+        "host": "cluster0.xxaol.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    }
+}
