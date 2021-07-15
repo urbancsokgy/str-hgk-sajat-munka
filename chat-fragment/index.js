@@ -39,6 +39,7 @@ app.post("/", async (req, res, next) => {
 app.get('/', async (req, res, next) => {
     const data = await Post.find()
     res.json(data) 
+   
     next(
         //console.log(JSON.stringify( data,  null, 4))
     )

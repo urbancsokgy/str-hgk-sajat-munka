@@ -1,0 +1,18 @@
+{
+  "name": "populate-example",
+  "version": "1.0.0",
+  "description": "https://www.youtube.com/watch?v=c2oWH1g2Fng&ab_channel=Parsity",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "simple-jwt-example",
+  "version": "1.0.0",
+  "description": "https://www.youtube.com/watch?v=7nafaH9SddU&ab_channel=TraversyMedia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JWT",
+    "Traversy",
+    "Media"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

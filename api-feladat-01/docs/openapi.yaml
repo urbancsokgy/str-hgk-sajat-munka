@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Api feladat
+  description: A sample vaccination API
+servers:
+  - url: http://127.0.0.1:3000/person
+paths:
+  /:
+    get:
+      description: Returns a list of persons
+      responses:
+        '200':
+          description: List of persons returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object     
+  /count:
+    get:
+      description: Returns a number of persons array length
+      responses:
+        '200':
+          description: List of persons returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object         
+  /vaccinated:
+    get:
+      description: Returns a list of persons when vaccine not equal empty string
+      responses:
+        '200':
+          description: List of persons returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object                      
