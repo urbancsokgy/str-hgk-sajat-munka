@@ -4,7 +4,7 @@ info:
   title: Api feladat
   description: A sample vaccination API
 servers:
-  - url: http://127.0.0.1:3000/person
+  - url: http://127.0.0.1:3000/persons
 paths:
   /:
     get:

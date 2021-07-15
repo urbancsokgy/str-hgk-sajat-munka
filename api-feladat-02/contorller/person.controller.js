@@ -11,6 +11,16 @@ exports.getAllperson = async function (req, res, next) {
         return res.status(400).json({ status: 400, message: e.message });
     }
 }
+
+exports.getOnePerson = async function (req, res, next) {
+    try {        
+        console.log('Req params', req.params);
+        const persons = await PersonService.getOnePerson(req.params.id)
+        return res.json(persons);
+    } catch (e) {
+        return res.status(400).json({ status: 400, message: e.message });
+    }
+}
 // Get all person and return count
 exports.getCountPerson = async function (req, res, next) {
     try {
@@ -39,7 +49,7 @@ exports.getPersonsWithParams = async function (req, res) {
     try {        
         console.log('A query paraméterek', req.query);
         let persons = await PersonService.getFilterPerson(req.query) 
-        console.table(persons)       
+              
         return res.json(persons);
     } catch (e) {
         return res.status(400).json({ status: 400, message: e.message });

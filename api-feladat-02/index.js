@@ -5,14 +5,20 @@ const app = express();
 const database = require('./database')
 const bodyParser = require ('body-parser')
 app.use(express.json());
+const swaggerUi = require ('swagger-ui-express')
+const YAML = require ('yamljs')
+// Swagger beállítás
+const swaggerDocument=YAML.load('./docs/openapi.yaml')
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+//--------------------
 database.connect
 
-app.get('/', (req, res, next) => {
-    const out={
-        'Query params': req.query,        
-    }
-    res.json(out)
-})
+// app.get('/', (req, res, next) => {
+//     const out={
+//         'Query params': req.query,        
+//     }
+//     res.json(out)
+// })
 
 app.use('/persons', require('./routes/person.route'))
 
